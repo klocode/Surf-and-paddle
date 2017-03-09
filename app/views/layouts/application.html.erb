@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Surfing</title>
+    <title>Sharknado</title>
+    <link rel="icon" href="https://images.indiegogo.com/file_attachments/1202830/files/20150207003244-my-edit2.jpg?1423297964" type="image/ico" />
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-    <%= yield %>
+      <body>
+        <div class="jumbotron">
+          <nav class="navbar">
+            <div class="container">
+          <!-- Start of my header -->
+              <div class="navbar-header">
+                <%= link_to root_path, class: "navbar-brand" do %>
+                  <%= image_tag "shark.svg", class: "img-responsive" %>
+                <% end %>
+                Sharknado Blog
+              </div>
+
+          <!-- Navbar -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">About</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="Search">
+                <i class="glyphicon glyphicon-search form-control-feedback"></i>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    <h1 class="text-center">That's What Fins Are For</h1>
+
+</div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p>
+
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

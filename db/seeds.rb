@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+5.times do
+  user = User.create!(
+  name: Faker::Pokemon.name,
+  picture: Faker::Avatar.image
+  )
+  3.times do
+    user.posts.create!(
+    title: Faker::StarWars.quote,
+    body: Faker::Hipster.paragraphs(1),
+    created_at: rand(1..700).days.ago
+    )
+  end
+
+
+
+
+end

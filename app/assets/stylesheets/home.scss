@@ -1,0 +1,16 @@
+.jumbotron {
+  background-image: image-url("background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 25vw;
+  background-position: 25%
+}
+
+.navbar-brand {
+  width: 50px;
+}
+
+.img-circle {
+  border-radius: 50%;
+  width: 75px;
+}
