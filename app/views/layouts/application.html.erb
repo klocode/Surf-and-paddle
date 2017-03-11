@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sharknado</title>
+    <title>Shorgi's</title>
     <link rel="icon" href="https://images.indiegogo.com/file_attachments/1202830/files/20150207003244-my-edit2.jpg?1423297964" type="image/ico" />
     <%= csrf_meta_tags %>
 
@@ -17,7 +17,9 @@
                 <%= link_to root_path, class: "navbar-brand" do %>
                   <%= image_tag "shark.svg", class: "img-responsive" %>
                 <% end %>
-                Sharknado Blog
+                <div id="title" class="text-center">
+                  A Shorgi Blog
+                </div>
               </div>
 
           <!-- Navbar -->
@@ -36,19 +38,33 @@
         </div>
       </nav>
 
-    <h1 class="text-center">That's What Fins Are For</h1>
-
+    <div id="header" class="row text-center">
+      <h1>
+      Corgi Shark
+      </h1>
+      An Ironyard Academy Project Est Fall 2013
+    </div>
 </div>
 
-    <div class="container">
+    <div class="container-fluid">
       <%= yield %>
     </div>
-    <footer class="footer">
-      <div class="container">
-        <p>
 
-        </p>
+    <footer>
+    <div class="container">
+        <div class="row vcenter">
+          <div class="col-md-6">
+          <img src="http://placehold.it/40x40">The Ironyard Copyright 2013, All Rights Reserved
+          </div>
+          <div id="footerLinks" class="col-md-6 vcenter">
+            <a>Nav Item 1</a>
+            <a>Nav Item 2</a>
+            <a>Nav Item 3</a>
+            <a>Nav Item 4</a>
+          </div>
+        </div>
       </div>
     </footer>
+
   </body>
 </html>

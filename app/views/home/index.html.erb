@@ -1,29 +1,57 @@
-<div class="container">
-
-  <div class="row row-offcanvas row-offcanvas-right">
-
-    <div class="col-lg-12 col-md-9">
-
-      <div class="row">
-        <div class="col-lg-8 col-md-9">
-          <h2><%= @post.title %></h2>
-          <p> <%= @post.body %> </p>
-        </div><!--/span-->
-
-        <div class="col-lg-4 col-md-3">
-          <%= image_tag @post.user.picture, class: "img-circle" %>
-          <p><%= @post.user.name %></p>
+<div id="content" class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2 class="text-uppercase">
+      A fantastic engaging headline goes here
+      </h2>
+      <div>
+      <img src="http://placehold.it/15x15">
+      <a><%= @post.user.name %></a><span></span> on <%= @post.created_at.strftime("%A %b. %e %Y %I:%M %p") %></span>
+      </div>
+      <br>
+      <article>
+        <%= simple_format @post.body %>
+      </article>
+    </div>
+    <div class="col-md-4 sidebar">
+      <div class="text-center">
+        <%= image_tag @post.user.picture, class: "img-circle" %>
+        <h4 class="text-uppercase"><%= @post.user.name %></h4>
+        <div id="socialLinks" class="text-center">
+        <a>Twitter</a>
+        <a>Facebook</a>
+        <a>Instagram</a>
         </div>
       </div>
-    </div><!--/row-->
-  </div><!--/span-->
+      <img id="corgi" src="https://s-media-cache-ak0.pinimg.com/originals/41/60/29/4160295f66f9fd38fa7cf02de08a2673.jpg">
+      <div>
+        <h4 class="text-uppercase">sidebar section heading</h4>
+      </div>
+      <p>
+        Coral hogfish snake eel goatfish and Black clown goby fanatic jumping at a nurse shark. Coral hogfish at Bursa trigger spot hogfish bite yellow pseudochromis weasel shark seabass in angelfish. Frogfish spot hogfish rabbitfish spotted sweetlips swim, peppered moray creature jumped. Zebra moray at banded sole bannerfish. Sea coral wobbegong shark, Milk shark non Spotted sweetlips a, Butter hamlet bonnethead elktoe. Sea coral wobbegong shark, Milk shark no.
+      </p>
+    </div>
+  </div>
+</div>
+<hr>
 
-</div><!--/row-->
+<div>
+<h2 class="text-uppercase text-center">
+Most Popular Posts
+</h2>
 
-
-
-  <footer>
-    <p>&copy; Company 2017</p>
-  </footer>
-
-</div><!--/.container-->
+  <div id="popularPosts" class="row">
+    <div id="shark" class="col-md-3">
+      <a href="#" class="bottom"><h3>Another Cool Title</h3></a>
+    </div>
+    <div id="nado" class="col-md-3">
+      <%= link_to "Title", @post %>
+    </div>
+    <div id="fight" class="col-md-3">
+      <a href="#" class="bottom"><h3>Here's A Longer Post Title</h3></a>
+    </div>
+    <div id="laser" class="col-md-3">
+      <a href="#" class="bottom"><h3>Oh Cool A Post!</h3></a>
+    </div>
+  </div>
+</div>

@@ -14,7 +14,7 @@
   3.times do
     user.posts.create!(
     title: Faker::StarWars.quote,
-    body: Faker::Hipster.paragraphs(1),
+    body: Faker::Hipster.paragraphs(4),
     created_at: rand(1..700).days.ago
     )
   end
