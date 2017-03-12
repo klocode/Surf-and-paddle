@@ -14,6 +14,12 @@
 .img-circle {
   border-radius: 50%;
   width: 75px;
+  height: 75px;
+}
+
+#small {
+  width: 20px;
+  height: 20px;
 }
 
 #header h1{
@@ -93,11 +99,13 @@ footer img{
 
     .center-block {
       background-size: cover;
+      width: 100%;
+      margin: 0px;
     }
   }
 }
 
-#popularTitle{
+#popularTitle {
   font-size: 50px;
 }
 
