@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-8">
       <h2 class="text-uppercase">
-      A fantastic engaging headline goes here
+      <%= @post.title %>
       </h2>
       <div>
       <img src="http://placehold.it/15x15">
@@ -12,6 +12,11 @@
       <article>
         <%= simple_format @post.body %>
       </article>
+      <div>
+        <button class="btn comments" type="submit">Read Comments</button>
+        <button class="btn read" type="submit">Read Later</button>
+        <button class="btn share" type="submit">Share This Post</button>
+      </div>
     </div>
     <div class="col-md-4 sidebar">
       <div class="text-center">
@@ -35,23 +40,20 @@
 </div>
 <hr>
 
-<div>
-<h2 class="text-uppercase text-center">
-Most Popular Posts
-</h2>
-
-  <div id="popularPosts" class="row">
-    <div id="shark" class="col-md-3">
-      <a href="#" class="bottom"><h3>Another Cool Title</h3></a>
-    </div>
-    <div id="nado" class="col-md-3">
-      <%= link_to "Title", @post %>
-    </div>
-    <div id="fight" class="col-md-3">
-      <a href="#" class="bottom"><h3>Here's A Longer Post Title</h3></a>
-    </div>
-    <div id="laser" class="col-md-3">
-      <a href="#" class="bottom"><h3>Oh Cool A Post!</h3></a>
-    </div>
+<div class="container-fluid">
+  <div>
+    <h2 id="popularTitle" class="text-uppercase text-center">
+    Most Popular Posts
+    </h2>
   </div>
+    <div id="popularPosts" class="row">
+      <% @popular_posts.each do |post| %>
+        <div class="col-md-3 popular">
+          <%= link_to post, class: "btn btn-block" do %>
+            <%= image_tag post.user.picture, class: "img-responsive center-block" %>
+          <% end %>
+          <span class="bottomTitles"><%= post.title %></span>
+        </div>
+      <% end %>
+    </div>
 </div>
