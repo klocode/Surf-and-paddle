@@ -1,4 +1,12 @@
-<div class="body">
-    <% body = @post.body.split("\n") %>
-    <%= simple_format body.join("\n\n") %>
+<div class="media">
+  <div class="media-left">
+    <% @posts.each do |post| %>
+      <%= render @post.title %>
+      <% end %>
+  </div>
+  
+  <div class="body">
+      <% body = @post.body.split("\n") %>
+      <%= simple_format body.join("\n\n") %>
+  </div>
 </div>
