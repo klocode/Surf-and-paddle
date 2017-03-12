@@ -1,29 +1,59 @@
-<div class="container">
-
-  <div class="row row-offcanvas row-offcanvas-right">
-
-    <div class="col-lg-12 col-md-9">
-
-      <div class="row">
-        <div class="col-lg-8 col-md-9">
-          <h2><%= @post.title %></h2>
-          <p> <%= @post.body %> </p>
-        </div><!--/span-->
-
-        <div class="col-lg-4 col-md-3">
-          <%= image_tag @post.user.picture, class: "img-circle" %>
-          <p><%= @post.user.name %></p>
+<div id="content" class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2 class="text-uppercase">
+      <%= @post.title %>
+      </h2>
+      <div>
+      <img src="http://placehold.it/15x15">
+      <a><%= @post.user.name %></a><span></span> on <%= @post.created_at.strftime("%A %b. %e %Y %I:%M %p") %></span>
+      </div>
+      <br>
+      <article>
+        <%= simple_format @post.body %>
+      </article>
+      <div>
+        <button class="btn comments" type="submit">Read Comments</button>
+        <button class="btn read" type="submit">Read Later</button>
+        <button class="btn share" type="submit">Share This Post</button>
+      </div>
+    </div>
+    <div class="col-md-4 sidebar">
+      <div class="text-center">
+        <%= image_tag @post.user.picture, class: "img-circle" %>
+        <h4 class="text-uppercase"><%= @post.user.name %></h4>
+        <div id="socialLinks" class="text-center">
+        <a>Twitter</a>
+        <a>Facebook</a>
+        <a>Instagram</a>
         </div>
       </div>
-    </div><!--/row-->
-  </div><!--/span-->
+      <img id="corgi" src="https://s-media-cache-ak0.pinimg.com/originals/41/60/29/4160295f66f9fd38fa7cf02de08a2673.jpg">
+      <div>
+        <h4 class="text-uppercase">sidebar section heading</h4>
+      </div>
+      <p>
+        Coral hogfish snake eel goatfish and Black clown goby fanatic jumping at a nurse shark. Coral hogfish at Bursa trigger spot hogfish bite yellow pseudochromis weasel shark seabass in angelfish. Frogfish spot hogfish rabbitfish spotted sweetlips swim, peppered moray creature jumped. Zebra moray at banded sole bannerfish. Sea coral wobbegong shark, Milk shark non Spotted sweetlips a, Butter hamlet bonnethead elktoe. Sea coral wobbegong shark, Milk shark no.
+      </p>
+    </div>
+  </div>
+</div>
+<hr>
 
-</div><!--/row-->
-
-
-
-  <footer>
-    <p>&copy; Company 2017</p>
-  </footer>
-
-</div><!--/.container-->
+<div class="container-fluid">
+  <div>
+    <h2 id="popularTitle" class="text-uppercase text-center">
+    Most Popular Posts
+    </h2>
+  </div>
+    <div id="popularPosts" class="row">
+      <% @popular_posts.each do |post| %>
+        <div class="col-md-3 popular">
+          <%= link_to post, class: "btn btn-block" do %>
+            <%= image_tag post.user.picture, class: "img-responsive center-block" %>
+          <% end %>
+          <span class="bottomTitles"><%= post.title %></span>
+        </div>
+      <% end %>
+    </div>
+</div>

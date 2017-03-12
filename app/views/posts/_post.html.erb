@@ -1,0 +1,4 @@
+<div class="body">
+    <% body = @post.body.split("\n") %>
+    <%= simple_format body.join("\n\n") %>
+</div>

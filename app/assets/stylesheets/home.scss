@@ -3,7 +3,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 25vw;
-  background-position: 25%
+  background-position: 25% 35%;
+  padding-top: 0px;
 }
 
 .navbar-brand {
@@ -13,4 +14,116 @@
 .img-circle {
   border-radius: 50%;
   width: 75px;
+}
+
+#header h1{
+  color: white;
+}
+
+#search{
+  padding:0 5px;
+}
+
+footer{
+  height:50px;
+  background:#3d6c88;
+  color:white;
+  padding:8px;
+}
+footer a{
+  color:white;
+}
+
+footer img{
+  max-width: 40px;
+}
+#footerLinks a{
+  margin: 0px 5px;
+}
+
+.vcenter{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+.sidebar{
+  margin-top:20px;
+}
+#socialLinks a{
+  margin:0 5px;
+}
+
+#socialLinks{
+  margin-bottom: 40px;
+}
+
+#corgi {
+  max-height: 50%;
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+
+#popularPosts {
+  height: auto;
+  margin: 0;
+
+  .btn {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .popular:hover{
+    opacity: 1.0;
+    filter: alpha(opacity=30);
+    padding: 0px;
+  }
+
+  .popular {
+    height: auto;
+    padding: 0px;
+    opacity: 0.5;
+
+    .btn {
+      border: none;
+    }
+
+    .center-block {
+      background-size: cover;
+    }
+  }
+}
+
+#popularTitle{
+  font-size: 50px;
+}
+
+.bottomTitles {
+  color: white;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px black;
+  text-transform: uppercase;
+  position: relative;
+  width: 100%;
+  bottom: 0px;
+}
+
+
+.comments {
+  opacity: 0.7;
+  background-color: lightgrey;
+  color: white;
+}
+
+.read {
+  opacity: 0.7;
+  background-color: lightgrey;
+  color: white;
+}
+
+.share {
+  background-color: blue;
+  opacity: 0.7;
+  color: white;
 }
