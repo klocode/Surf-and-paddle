@@ -63,6 +63,11 @@ footer img{
   margin-bottom: 40px;
 }
 
+#pop{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 #popularPosts {
   height: auto;
   margin: 0;
@@ -70,6 +75,9 @@ footer img{
   .btn {
     margin: 0px;
     padding: 0px;
+    border: none;
+    display: flex;
+    height: 300px;
   }
 
   .popular:hover{
@@ -82,10 +90,6 @@ footer img{
     height: auto;
     padding: 0px;
     opacity: 0.5;
-
-    .btn {
-      border: none;
-    }
 
     .center-block {
       background-size: cover;
@@ -104,9 +108,9 @@ footer img{
   font-size: 20px;
   text-shadow: 1px 1px 1px black;
   text-transform: uppercase;
-  position: relative;
+  position: absolute;
   width: 100%;
-  bottom: 0px;
+  bottom: 10px;
 }
 
 
