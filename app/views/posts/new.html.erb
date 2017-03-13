@@ -1,0 +1,20 @@
+<h1>Write a new post</h1>
+
+<%= form_for @post do |f| %>
+<div>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</div>
+<div>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+</div>
+<div>
+  <%= f.label :user_id %>
+  <%= f.select :user_id, User.all.collect{|u| [u.name, u.id]} %>
+</div>
+<div>
+  <%= f.submit class: "btn btn-primary" %>
+</div>
+
+<% end %>
