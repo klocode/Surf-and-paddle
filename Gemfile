@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+ruby '2.3.3'
+
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -22,6 +24,8 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 gem 'pry-rails'
 gem 'bootstrap-sass'
+gem 'faker'
+
 
 
 # Use jquery as the JavaScript library
