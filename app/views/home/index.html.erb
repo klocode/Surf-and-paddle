@@ -17,6 +17,7 @@
         <%= simple_format @post.body %>
       </article>
       <div>
+        <%= link_to "Edit post", edit_post_path(@post), class: "btn btn-primary" %>
         <button class="btn comments" type="submit">Read Comments</button>
         <button class="btn read" type="submit">Read Later</button>
         <button class="btn share" type="submit">Share This Post</button>
