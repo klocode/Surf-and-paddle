@@ -11,10 +11,6 @@
   width: 50px;
 }
 
-#postBtn {
-  margin-top: 7px;
-}
-
 #post_body {
   width: 875px;
   height: 219px;
@@ -29,6 +25,14 @@
   margin-top: 10px;
 }
 
+.usersIcons {
+
+  .img-responsive {
+    height: 200px;
+    width: 200px;
+  }
+
+}
 
 #woah {
   border-left: 2px solid grey;
