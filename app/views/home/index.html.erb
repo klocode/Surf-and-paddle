@@ -16,11 +16,17 @@
       <article>
         <%= simple_format @post.body %>
       </article>
-      <div>
-        <%= link_to "Edit post", edit_post_path(@post), class: "btn btn-primary" %>
-        <button class="btn comments" type="submit">Read Comments</button>
-        <button class="btn read" type="submit">Read Later</button>
-        <button class="btn share" type="submit">Share This Post</button>
+      <div class="postButtons">
+        <% if @post.is_owner? current_user %>
+          <%= link_to "Edit post", edit_post_path(@post), class: "btn btn-primary" %>
+          <button class="btn comments" type="submit">Read Comments</button>
+          <button class="btn read" type="submit">Read Later</button>
+          <button class="btn share" type="submit">Share This Post</button>
+        <% else %>
+          <button class="btn comments" type="submit">Read Comments</button>
+          <button class="btn read" type="submit">Read Later</button>
+          <button class="btn share" type="submit">Share This Post</button>
+        <% end %>
       </div>
     </div>
     <div class="col-md-4 sidebar">
@@ -48,7 +54,7 @@
 <div id="pop" class="container-fluid">
   <div>
     <h2 id="popularTitle" class="text-uppercase text-center">
-    Most Popular Posts
+    Most Recent Posts
     </h2>
   </div>
     <div id="popularPosts" class="row">
