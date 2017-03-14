@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(name: params[:session][:name])
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      flash[:success] = "Welcome #{@user.name}"
+      flash[:success] = "Welcome #{@user.name}!"
       redirect_to :root
     else
       flash[:danger] = "Incorrect credentials. Please try again."
@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    flash[:success] = "You have logged out successfully!"
     redirect_to :root
   end
 

@@ -9,7 +9,10 @@
 5.times do |x|
   user = User.create!(
   name: Faker::Pokemon.name,
-  picture: "corgi#{x+1}.jpg"
+  bio: "#{Faker::Demographic.race}\n" + "#{Faker::Demographic.sex}\n" + "#{Faker::Demographic.educational_attainment}",
+  email: Faker::Internet.safe_email,
+  picture: "corgi#{x+1}.jpg",
+  password: "password"
   )
   3.times do
     user.posts.create!(

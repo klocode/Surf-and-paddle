@@ -18,7 +18,8 @@
       </article>
       <div class="postButtons">
         <% if @post.is_owner? current_user %>
-          <%= link_to "Edit post", edit_post_path(@post), class: "btn btn-primary" %>
+          <%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-primary" %>
+          <%= link_to "Delete Post", @post, method: :delete, class: "btn btn-danger" %>
           <button class="btn comments" type="submit">Read Comments</button>
           <button class="btn read" type="submit">Read Later</button>
           <button class="btn share" type="submit">Share This Post</button>
@@ -31,7 +32,9 @@
     </div>
     <div class="col-md-4 sidebar">
       <div class="text-center">
-        <%= image_tag @post.user.picture, class: "img-circle" %>
+        <%= link_to @user, class: "btn" do %>
+          <%= image_tag @post.user.picture, class: "img-circle" %>
+          <% end %>
         <h4 class="text-uppercase"><%= @post.user.name %></h4>
         <div id="socialLinks" class="text-center">
         <a>Twitter</a>

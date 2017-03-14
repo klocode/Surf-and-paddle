@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   before_action :find_post, only: [:edit, :show, :update]
   before_action :require_user, only: [:new, :edit, :create]
-  before_action :is_owner, only: [:edit, :destroy]
+  before_action :is_owner, only: [:edit, :update, :destroy]
   # make destroy
 
   def index
@@ -33,6 +33,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
+    flash[:success] = "You have deleted post: #{@post.title}."
     redirect_to :root
   end
 
@@ -55,8 +56,8 @@ class PostsController < ApplicationController
   end
 
   def is_owner
-    @post = current_user.posts.find_by(params[:id])
-    unless @post && @post.user == current_user
+    @post = current_user.posts.find_by(id: params[:id])
+    unless @post.user == current_user
       flash[:danger] = "That's not your post."
       redirect_to :root
     end
