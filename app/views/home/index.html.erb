@@ -13,9 +13,6 @@
         <%= simple_format @post.body %>
       </article>
       <h1 id="woah"> Woah, hello there Corgeous!</h1>
-      <article>
-        <%= simple_format @post.body %>
-      </article>
       <div class="postButtons">
         <% if @post.is_owner? current_user %>
           <%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-primary" %>
