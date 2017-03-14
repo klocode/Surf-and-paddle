@@ -25,6 +25,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'pry-rails'
 gem 'bootstrap-sass'
 gem 'faker'
+gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
+gem "rails_12factor", group: :production
 
 
 

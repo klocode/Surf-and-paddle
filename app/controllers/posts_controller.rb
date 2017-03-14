@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:edit, :show, :update]
 
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.page(params[:page])
   end
 
   def show
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:user_id, :body)
+    params.require(:post).permit(:user_id, :title, :body)
   end
 
 end
