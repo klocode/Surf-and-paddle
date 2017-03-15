@@ -56,8 +56,8 @@ class PostsController < ApplicationController
   end
 
   def is_owner
-    @post = current_user.posts.find_by(id: params[:id])
-    unless @post.user == current_user
+    @post = Post.find_by(id: params[:id])
+    unless current_user.admin or @post.user == current_user
       flash[:danger] = "That's not your post."
       redirect_to :root
     end
