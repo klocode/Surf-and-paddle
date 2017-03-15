@@ -10,16 +10,11 @@
   </div>
 <% end %>
 
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.label :picture %>
-    <%= f.text_field :picture %>
-  </div>
-  <div>
-    <%= f.submit class: "btn btn-primary" %>
-  </div>
+<%= simple_form_for @user do |f| %>
+  <%= f.input :name %>
+  <%= f.input :password %>
+  <%= f.input :email %>
+  <%= f.input :bio %>
+  <%= f.input :picture %>
+  <%= f.button :submit %>
 <% end %>

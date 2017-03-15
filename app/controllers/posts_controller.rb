@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
 
   before_action :find_post, only: [:edit, :show, :update]
+  before_action :require_user, only: [:new, :edit, :create]
+  before_action :is_owner, only: [:edit, :update, :destroy]
+  # make destroy
 
   def index
     @posts = Post.page(params[:page])
@@ -17,7 +20,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
     if @post.save
       redirect_to :root
     else
@@ -26,7 +29,12 @@ class PostsController < ApplicationController
   end
 
   def edit
+  end
 
+  def destroy
+    @post.destroy
+    flash[:success] = "You have deleted post: #{@post.title}."
+    redirect_to :root
   end
 
   def update
@@ -45,6 +53,14 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:user_id, :title, :body)
+  end
+
+  def is_owner
+    @post = Post.find_by(id: params[:id])
+    unless current_user.admin or @post.user == current_user
+      flash[:danger] = "That's not your post."
+      redirect_to :root
+    end
   end
 
 end

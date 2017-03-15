@@ -11,6 +11,13 @@
   width: 50px;
 }
 
+.postButtons{
+
+  .btn{
+    margin-bottom: 0px;
+  }
+}
+
 #post_body {
   width: 875px;
   height: 219px;
@@ -32,6 +39,14 @@
     width: 200px;
   }
 
+}
+
+.form-control {
+  width: 75%;
+}
+
+.btn-primary {
+  margin-bottom: 10px;
 }
 
 #woah {

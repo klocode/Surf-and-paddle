@@ -10,21 +10,10 @@
    </div>
 <% end %>
 
-<%= form_for @post do |f| %>
-<div>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-</div>
-<div>
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-</div>
-<div>
-  <%= f.label :user_id %>
-  <%= f.select :user_id, User.all.collect{|u| [u.name, u.id]}, :include_blank => true %>
-</div>
-<div>
-  <%= f.submit class: "btn btn-info" %>
-</div>
 
+
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body %>
+  <%= f.button :submit %>
 <% end %>

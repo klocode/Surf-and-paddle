@@ -7,4 +7,9 @@ class Post < ApplicationRecord
   default_scope { order(created_at: :desc) }
 
   paginates_per 10
+
+  def is_owner?(this_user)
+    user == this_user
+  end
+  
 end
