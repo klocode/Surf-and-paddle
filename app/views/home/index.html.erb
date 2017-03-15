@@ -13,6 +13,7 @@
         <%= simple_format @post.body %>
       </article>
       <h1 id="woah"> Woah, hello there Corgeous!</h1>
+      <%= image_tag @post.photo.versions[:standard].url, class: "img-responsive right-block" %>
       <div class="postButtons">
         <% if current_user.try(:admin?) or @post.is_owner? current_user %>
           <%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-primary" %>
@@ -61,7 +62,11 @@
       <% @popular_posts.each do |post| %>
         <div class="col-md-3 popular">
           <%= link_to post, class: "btn btn-block" do %>
-            <%= image_tag post.user.picture, class: "img-responsive center-block" %>
+            <% if post.photo? %>
+              <%= image_tag post.photo.versions[:standard].url, class: "img-responsive center-block", alt: "Majestic corgi galloping in the snow" %>
+            <% else %>
+              <%= image_tag post.user.picture, class: "img-responsive center-block" %>
+            <% end %>
           <% end %>
           <span class="bottomTitles"><%= post.title %></span>
         </div>

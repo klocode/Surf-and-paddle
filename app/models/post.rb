@@ -1,6 +1,9 @@
 class Post < ApplicationRecord
   belongs_to :user, counter_cache: true
 
+  mount_uploader :photo, PostPhotoUploader
+
+
   validates :title, :body, :user, presence: true
   validates_length_of :title, :minimum => 10
 
@@ -11,5 +14,5 @@ class Post < ApplicationRecord
   def is_owner?(this_user)
     user == this_user
   end
-  
+
 end
