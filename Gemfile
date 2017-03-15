@@ -30,6 +30,9 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 gem "rails_12factor", group: :production
 gem 'simple_form'
 gem 'sendgrid-ruby'
+gem 'figaro'
+gem 'cloudinary'
+gem 'carrierwave'
 
 
 
