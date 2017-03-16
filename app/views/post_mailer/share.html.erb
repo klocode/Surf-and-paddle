@@ -6,13 +6,8 @@
 
 <p><%= @post.title %></p>
 <p><%= @post.body %></p>
-<% if @post.photo? %>
-  <%= image_tag @post.photo %>
-<% elsif %>
-  <%= image_tag @post.photo_url %>
-<% else %>
-  <%= image_tag @user.picture %>
-<% end %>
+<%= image_tag @post.photo unless @post.photo.blank? %>
+
 
 <p>This was written by <%= @post.user.name %></p>
 <p>Here's their picture!</p>
