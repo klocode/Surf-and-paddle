@@ -1,0 +1,6 @@
+<h1>Share this post!</h1>
+
+<%= simple_form_for :share do |f| %>
+ <%= f.input :send_to %>
+ <%= f.button :submit, "Share this!", class: "btn btn-primary" %>
+<% end %>

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
-  before_action :find_post, only: [:edit, :show, :update, :share, :send_to]
-  before_action :require_user, only: [:new, :edit, :create, :share, :send_to]
+  before_action :find_post, only: [:edit, :show, :update, :shares, :send_to]
+  before_action :require_user, only: [:new, :edit, :create, :shares, :send_to]
   before_action :is_owner, only: [:edit, :update, :destroy]
   # make destroy
 
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def share
+  def shares
   end
 
   def send_to

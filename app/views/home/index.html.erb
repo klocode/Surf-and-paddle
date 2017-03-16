@@ -24,7 +24,7 @@
           <%= link_to "Delete Post", @post, method: :delete, class: "btn btn-danger" %>
           <button class="btn comments" type="submit">Read Comments</button>
           <button class="btn read" type="submit">Read Later</button>
-          <%= link_to "Share Post", share_path(@post), class: "btn btn-info" %>
+          <%= link_to "Share Post", shares_post_path(@post), class: "btn btn-info" %>
         <% else %>
           <button class="btn comments" type="submit">Read Comments</button>
           <button class="btn read" type="submit">Read Later</button>
