@@ -4,12 +4,14 @@
 </p>
 
 
-<p>@post.title</p>
-<p>@post.body</p>
+<p><%= @post.title %></p>
+<p><%= @post.body %></p>
 <% if @post.photo? %>
   <%= image_tag @post.photo %>
-<% else %>
+<% elsif %>
   <%= image_tag @post.photo_url %>
+<% else %>
+  <%= image_tag @user.picture %>
 <% end %>
 
 <p>This was written by <%= @post.user.name %></p>
