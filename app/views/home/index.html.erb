@@ -28,7 +28,7 @@
         <% else %>
           <button class="btn comments" type="submit">Read Comments</button>
           <button class="btn read" type="submit">Read Later</button>
-          <button class="btn share" type="submit">Share This Post</button>
+          <%= link_to "Share Post", shares_post_path(@post), class: "btn btn-info" %>
         <% end %>
       </div>
     </div>
