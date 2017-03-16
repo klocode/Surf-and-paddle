@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   post "/login" => 'sessions#create'
   delete "/logout" => 'sessions#destroy', as: :logout
   get '/posts/:id/share' => 'posts#share', as: :share
-  post '/posts/:id/share' => 'posts#send'
+  post '/posts/:id/share' => 'posts#send_to'
 
 end
