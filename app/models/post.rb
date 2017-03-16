@@ -3,7 +3,7 @@ class Post < ApplicationRecord
 
   mount_uploader :photo, PostPhotoUploader
 
-  validate :url_xor_photo
+  # validate :url_xor_photo
   validates :title, :body, :user, presence: true
   validates_length_of :title, {:minimum => 10, message: -> (object, chars) do
                           "Your post title is #{(10 - chars[:value].length)} characters too short."
