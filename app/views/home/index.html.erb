@@ -67,7 +67,12 @@
         <div class="col-md-3 popular">
           <%= link_to post, class: "btn btn-block" do %>
             <% if post.photo? %>
-              <%= image_tag post.photo.versions[:standard].url, class: "img-responsive center-block", alt: "Majestic corgi galloping in the snow" %>
+              <%= image_tag post.photo.versions[:standard].url, class: "img-responsive center-block" %>
+            <% elsif %>
+              <% if %>
+                <% post.photo_url %>
+                <%= image_tag post.photo_url, class: "img-responsive center-block" %>
+              <% end %>
             <% else %>
               <%= image_tag post.user.picture, class: "img-responsive center-block" %>
             <% end %>
