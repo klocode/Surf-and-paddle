@@ -3,7 +3,7 @@ class Post < ApplicationRecord
 
   mount_uploader :photo, PostPhotoUploader
 
-  # validate :url_xor_photo
+  validate :has_photo
   validates :title, :body, :user, presence: true
   validates_length_of :title, {:minimum => 10, message: -> (object, chars) do
                           "Your post title is #{(10 - chars[:value].length)} characters too short."
@@ -29,11 +29,10 @@ class Post < ApplicationRecord
 
 
 
-  # def url_xor_photo
-  #   if !photo? && photo_url.blank?
-  #     errors.add(:photo, "must exist if photo url doesn't")
-  #     errors.add(:photo_url, "must exist if photo doesn't")
-  #   end
-  # end
+  def has_photo
+    if !photo? && photo_url.blank?
+      errors[:base] = "Must upload a photo or a photo url."
+    end
+  end
 
 end
