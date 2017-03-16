@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
-  before_action :find_post, only: [:edit, :show, :update, :share, :send]
-  before_action :require_user, only: [:new, :edit, :create]
+  before_action :find_post, only: [:edit, :show, :update, :share, :send_to]
+  before_action :require_user, only: [:new, :edit, :create, :share, :send_to]
   before_action :is_owner, only: [:edit, :update, :destroy]
   # make destroy
 
