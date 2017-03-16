@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
 
   def forgot_password(user)
     @user = user
-    @greeting = "Hi"
+    @greeting = "Why hello there,"
 
     mail to: user.email, :subject => 'Reset password instructions'
   end
