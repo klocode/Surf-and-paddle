@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :find_post, only: [:edit, :show, :update]
+  before_action :find_post, only: [:edit, :show, :update, :share, :send]
   before_action :require_user, only: [:new, :edit, :create]
   before_action :is_owner, only: [:edit, :update, :destroy]
   # make destroy
@@ -43,6 +43,16 @@ class PostsController < ApplicationController
     else
       params.require(:post).permit(:title, :body)
     end
+  end
+
+  def share
+  end
+
+  def send_to
+    @send_to = params[:share][:send_to]
+    PostMailer.share(@post, @send_to, current_user).deliver
+    flash[:success] = "Post has been successfully shared!"
+    redirect_to @post
   end
 
   def find_post
