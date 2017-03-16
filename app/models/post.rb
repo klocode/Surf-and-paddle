@@ -29,11 +29,11 @@ class Post < ApplicationRecord
 
 
 
-  def url_xor_photo
-    if !photo? && photo_url.blank?
-      errors.add(:photo, "must exist if photo url doesn't")
-      errors.add(:photo_url, "must exist if photo doesn't")
-    end
-  end
+  # def url_xor_photo
+  #   if !photo? && photo_url.blank?
+  #     errors.add(:photo, "must exist if photo url doesn't")
+  #     errors.add(:photo_url, "must exist if photo doesn't")
+  #   end
+  # end
 
 end
