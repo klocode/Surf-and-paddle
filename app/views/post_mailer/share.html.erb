@@ -4,11 +4,11 @@
 </p>
 
 
-<p><%= @post.title %></p>
+<p>Title:<%= @post.title %></p>
 <p><%= @post.body %></p>
 <%= image_tag @post.photo unless @post.photo.blank? %>
 
 
 <p>This was written by <%= @post.user.name %></p>
-<p>Here's their picture!</p>
-<%= image_tag @user.picture %>
+
+<%= link_to "See the full post", post_url(@post) %>
